@@ -6,7 +6,9 @@ In order to use this code database should have these views:
 2. create view ok as select time::timestamp::date as date, status, count(*) from log where status like '200%' group by date, status;
 3. create view errors as select time::timestamp::date as date, status, count(*) from log where status like '404%' group by date, status;
 
-Run the script file from command line: pyhton loganalyser.py options: [-h] [--errors] [--authors] [--articles]
+Run the script file from command line: 
+
+pyhton loganalyser.py options: [-h] [--errors] [--authors] [--articles]
 
 *YOU NEED TO USE ONE OF THE OPTIONAL ARGUMENTS*
 
@@ -16,7 +18,9 @@ optional arguments:
   --authors   show which show top five authors
   --articles  show which show top three articles
 
-For example: pyhton loganalyser.py --authors
+For example: 
+
+pyhton loganalyser.py --authors
 
 Will produce:
 
