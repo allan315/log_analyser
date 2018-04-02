@@ -1,7 +1,7 @@
 # Udacity nano degree log analyzer project
 This is a command line tool written in Python which analyzes a news database to show some of the statistics of a webpage
 ## 
-In order to use this code database should have these views:'
+In order to use this code database should have these views:
 1. create view view_count as select replace(path, '/article/', '') as slug, count(*) from log group by slug;
 2. create view ok as select time::timestamp::date as date, status, count(*) from log where status like '200%' group by date, status;
 3. create view errors as select time::timestamp::date as date, status, count(*) from log where status like '404%' group by date, status;
