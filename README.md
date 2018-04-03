@@ -27,8 +27,8 @@ Load the data to database using 'psql -d news -f newsdata.sql' command
 use 'psql -d news' command in your VM</ul>
 
 When connected to database create views which are needed for error rate calculation:<br> 
-<ul>Copy paste this:<br>
-<li>create view errs as select time::timestamp::date as date, count(*) from log where status like '404%' group by date;</li>
+Copy paste this:<br>
+<ul><li>create view errs as select time::timestamp::date as date, count(*) from log where status like '404%' group by date;</li>
 <li>create view total as select time::timestamp::date as date, count(*) from log group by date;</li></ul>
 
 Download and put the loganalyser.py in the same directory as the newsdata.sql<br>
