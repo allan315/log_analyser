@@ -4,22 +4,22 @@ This is a command line tool written in Python which analyzes a news database to 
 
 ### Prerequisites
 
-1. Setup Vagrant and Virtualbox
+Setup Vagrant and Virtualbox
 
 <ul><li>Download and install Virtualbox:<br>
 https://www.virtualbox.org/wiki/Download_Old_Builds_5_1</li>
 
-Download and install Vagrant:<br>
-https://www.vagrantup.com/downloads.html
+<li>Download and install Vagrant:<br>
+https://www.vagrantup.com/downloads.html</li>
 
-Download and extract VM configuration:<br>
+<li>Download and extract VM configuration:<br>
 https://d17h27t6h515a5.cloudfront.net/topher/2017/August/59822701_fsnd-virtual-machine/fsnd-virtual-machine.zip 
 
 'cd' to /vagrant directory and run command 'vagrant up' to install the VM.
-Then run 'vagrant ssh' to login to the virtual machine.
+Then run 'vagrant ssh' to login to the virtual machine.</li>
 
-Download the database file and extract it to /vagrant directory:<br>
-https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip </ul>
+<li>Download the database file and extract it to /vagrant directory:<br>
+https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip </li></ul>
 
 2. Load the data to database using 'psql -d news -f newsdata.sql' command
 
