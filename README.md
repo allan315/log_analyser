@@ -4,7 +4,7 @@ This is a command line tool written in Python which analyzes a news database to 
 
 ### Prerequisites
 
-Setup Vagrant and Virtualbox
+1. Setup Vagrant and Virtualbox
 
 Download and install Virtualbox:<br>
 https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
@@ -21,17 +21,17 @@ Then run 'vagrant ssh' to login to the virtual machine.
 Download the database file and extract it to /vagrant directory:<br>
 https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip 
 
-Load the data to database using 'psql -d news -f newsdata.sql' command
+2. Load the data to database using 'psql -d news -f newsdata.sql' command
 
 In VM connect to database (if not already connected to):<br>
 use 'psql -d news' command in your VM
 
-- When connected to database create views which are needed for error rate calculation:<br> 
+3. When connected to database create views which are needed for error rate calculation:<br> 
 Copy paste this:<br>
 create view errs as select time::timestamp::date as date, count(*) from log where status like '404%' group by date;
 create view total as select time::timestamp::date as date, count(*) from log group by date;
 
-Download and put the loganalyser.py in the same directory as the newsdata.sql<br>
+4. Download and put the loganalyser.py in the same directory as the newsdata.sql<br>
 
 ### Running the code
 
