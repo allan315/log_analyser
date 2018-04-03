@@ -6,32 +6,32 @@ This is a command line tool written in Python which analyzes a news database to 
 
 Setup Vagrant and Virtualbox
 
-- Download and install Virtualbox:
+- Download and install Virtualbox:<br>
 https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
 
-- Download and install Vagrant:
+- Download and install Vagrant:<br>
 https://www.vagrantup.com/downloads.html
 
-- Download and extract VM configuration
+- Download and extract VM configuration:<br>
 https://d17h27t6h515a5.cloudfront.net/topher/2017/August/59822701_fsnd-virtual-machine/fsnd-virtual-machine.zip 
 
 'cd' to /vagrant directory and run command 'vagrant up' to install the VM.
 Then run 'vagrant ssh' to login to the virtual machine.
 
-- Download the database file and extract it to /vagrant directory:
+- Download the database file and extract it to /vagrant directory:<br>
 https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip 
 
 Load the data to database using 'psql -d news -f newsdata.sql' command
 
-- In VM connect to database (if not already connected to)
+- In VM connect to database (if not already connected to):<br>
 use 'psql -d news' command in your VM
 
-- When connected to database create views which are needed for error rate calculation. 
-Copy paste this:
+- When connected to database create views which are needed for error rate calculation:<br> 
+Copy paste this:<br>
 create view errs as select time::timestamp::date as date, count(*) from log where status like '404%' group by date;
 create view total as select time::timestamp::date as date, count(*) from log group by date;
 
-- Download and put the loganalyser.py in the same directory as the newsdata.sql
+- Download and put the loganalyser.py in the same directory as the newsdata.sql<br>
 
 ### Running the code
 
@@ -52,8 +52,8 @@ For example:
 python loganalyser.py --articles
 
 Will produce:
-
-Article - View count
-Candidate is jerk, alleges rival - 338647 views
-Bears love berries, alleges bear - 253801 views
-Bad things gone, say good people - 170098 views
+<br>
+Article - View count<br>
+Candidate is jerk, alleges rival - 338647 views<br>
+Bears love berries, alleges bear - 253801 views<br>
+Bad things gone, say good people - 170098 views<br>
